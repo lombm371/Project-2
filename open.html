@@ -120,7 +120,7 @@ body {
     </video>
   </div>
 <div class="cam">
-    <div class="label">ecosystem 9</div>
+    <div class="label">ecosystem 4</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/7.mp4" type="video/mp4">
@@ -137,7 +137,7 @@ body {
   </div>
 
   <div class="cam">
-  <div class="label">YOU 3</div>
+  <div class="label">YOU </div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
@@ -150,7 +150,7 @@ body {
     </video>
   </div>
 <div class="cam">
-  <div class="label">YOU 2</div>
+  <div class="label">YOU </div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
@@ -162,7 +162,7 @@ body {
     </video>
   </div>
 <div class="cam">
-  <div class="label">YOU 4</div>
+  <div class="label">YOU </div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
@@ -175,13 +175,13 @@ body {
   </div>
 
   <div class="cam">
-  <div class="label">YOU 5</div>
+  <div class="label">YOU </div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
 
   <div class="cam">
-    <div class="label">ecosystem 10</div>
+    <div class="label">ecosystem 9</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/8.mp4" type="video/mp4">
@@ -189,27 +189,27 @@ body {
   </div>
 
   <div class="cam">
-  <div class="label">YOU 5</div>
+  <div class="label">YOU</div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
 
 
 <div class="cam">
-    <div class="label">ecosystem 11</div>
+    <div class="label">ecosystem 10</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/9.mp4" type="video/mp4">
     </video>
   </div>
 <div class="cam">
-  <div class="label">YOU4</div>
+  <div class="label">YOU</div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
 
   <div class="cam">
-    <div class="label">ecosystem 12</div>
+    <div class="label">ecosystem 11</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/10.mp4" type="video/mp4">
@@ -217,7 +217,7 @@ body {
   </div>
 
   <div class="cam">
-    <div class="label">ecosystem 4</div>
+    <div class="label">ecosystem 12</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/4.mp4" type="video/mp4">
@@ -225,7 +225,7 @@ body {
   </div>
 
   <div class="cam">
-    <div class="label">ecosystem 4</div>
+    <div class="label">ecosystem 13</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/2.mp4" type="video/mp4">
@@ -233,7 +233,7 @@ body {
   </div>
 
   <div class="cam">
-    <div class="label">ecosystem 4</div>
+    <div class="label">ecosystem 14</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/13.mp4" type="video/mp4">
@@ -241,21 +241,30 @@ body {
   </div>
 
   <div class="cam">
-    <div class="label">ecosystem 4</div>
+    <div class="label">ecosystem 15</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/14.mp4" type="video/mp4">
     </video>
   </div>
 
+  <div class="cam">
+    <div class="label">ecosystem 15</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/16.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
     <div class="cam">
-  <div class="label">YOU 3</div>
+  <div class="label">YOU </div>
   <div class="time">LIVE</div>
   <video class="liveCam"></video>
 </div>
 
 <div class="cam">
-    <div class="label">ecosystem 4</div>
+    <div class="label">ecosystem 16</div>
     <div class="time">ARCHIVE</div>
     <video autoplay muted loop playsinline>
       <source src="video archive/12.mp4" type="video/mp4">
@@ -281,7 +290,7 @@ navigator.mediaDevices.getUserMedia({ video: true })
   console.log("Camera access denied", error);
 });
 
-// --------------------- SCREEN RECORDING ---------------------
+
 let mediaRecorder;
 let recordedChunks = [];
 let recording = false;
@@ -323,7 +332,7 @@ function stopScreenRecording() {
     console.log("Screen recording stopped.");
   }
 }
-// Enable audio on hover for all archive videos
+
 const archiveVideos = document.querySelectorAll('.grid video:not(.liveCam)');
 
 archiveVideos.forEach(video => {
