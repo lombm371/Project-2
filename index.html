@@ -12,25 +12,26 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr); /* 5 tiles per row */
   gap: 8px;
 }
 
 .cam {
   position: relative;
   width: 100%;
-  height: 180px;
+  padding-top: 177%; /* 9:16 aspect ratio for videos */
   background: black;
   border: 2px solid #111;
   overflow: hidden;
   filter: grayscale(100%) contrast(120%);
 }
 
-.cam iframe,
 .cam video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border: none;
   object-fit: cover;
 }
 
@@ -63,75 +64,238 @@ body {
 
 <div class="grid">
 
+  
   <div class="cam">
-  <a href="https://www.skylinewebcams.com/en/webcam/united-states/new-york/new-york/new-york-skyline.html" target="_blank">
-    <img src="https://embed.skylinewebcams.com/img/790.jpg" alt="New York Skyline Live Cam">
-  </a>
+  <div class="label">YOU</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
 </div>
 
   <div class="cam">
-    <div class="label">CAM 02 — CHALLENGER</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    <div class="label">ecosystem 1</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/SnapInsta.to_AQPRmSxLoryphUgrCeTGhMmS4n_0nc2g4vxDdUkpphp4Vh737yQnGMcwdw0KS5rKqfWp-gA76fjTydEfScweuHc5amJ3U3mKEEWmpPc.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 03 — OJ CHASE</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+    <div class="label">ecosystem 2</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/11.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 04 — KATRINA</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+    <div class="label">ecosystem 3</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/3.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+    <div class="label">ecosystem 9</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/7.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+
+  <div class="cam">
+    <div class="label">ecosystem 5</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/5.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 05 — YOU</div>
-    <div class="time">LIVE NOW</div>
-    <video id="userCam" autoplay muted playsinline></video>
+  <div class="label">YOU 3</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 6</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/Create_an_eerie_philosophical__Kling_30__06300.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+  <div class="label">YOU 2</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+  <div class="cam">
+    <div class="label">ecosystem 7</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/Create_a_cinematic_unsettling__Kling_30__84815.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+  <div class="label">YOU 4</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+  <div class="cam">
+    <div class="label">ecosystem 8</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/6.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 06 — MOON LANDING</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
+  <div class="label">YOU 5</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 10</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/8.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 07 — JAN 6</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
+  <div class="label">YOU 5</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+
+<div class="cam">
+    <div class="label">ecosystem 11</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/9.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+  <div class="label">YOU4</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 12</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/10.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 08 — BLACKOUT</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_7" allowfullscreen></iframe>
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/4.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 09 — ELECTION NIGHT</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_8" allowfullscreen></iframe>
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/2.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="cam">
-    <div class="label">CAM 10 — PROTEST</div>
-    <div class="time">LIVE ARCHIVE</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_9" allowfullscreen></iframe>
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/13.mp4" type="video/mp4">
+    </video>
   </div>
+  <div class="cam">
+  <div class="label">YOU4</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+<div class="cam">
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/12.mp4" type="video/mp4">
+    </video>
+  </div>
+  
 
 </div>
 
 <script>
+// --------------------- LIVE CAMERA ---------------------
 navigator.mediaDevices.getUserMedia({ video: true })
 .then(function(stream) {
-  document.getElementById("userCam").srcObject = stream;
+  const liveCams = document.querySelectorAll('.liveCam');
+  liveCams.forEach(video => {
+    video.srcObject = stream;
+    video.autoplay = true;
+    video.muted = true;
+    video.playsInline = true;
+  });
 })
 .catch(function(error) {
   console.log("Camera access denied", error);
+});
+
+// --------------------- SCREEN RECORDING ---------------------
+let mediaRecorder;
+let recordedChunks = [];
+let recording = false;
+
+async function startScreenRecording() {
+  try {
+    const stream = await navigator.mediaDevices.getDisplayMedia({
+      video: { cursor: "always" },
+      audio: false
+    });
+
+    mediaRecorder = new MediaRecorder(stream);
+    mediaRecorder.ondataavailable = e => {
+      if (e.data.size > 0) recordedChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, { type: "video/webm" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "screen-record.webm";
+      a.click();
+      recordedChunks = [];
+    };
+
+    mediaRecorder.start();
+    recording = true;
+    console.log("Screen recording started...");
+  } catch (err) {
+    console.error("Error accessing screen:", err);
+  }
+}
+
+function stopScreenRecording() {
+  if (mediaRecorder && recording) {
+    mediaRecorder.stop();
+    recording = false;
+    console.log("Screen recording stopped.");
+  }
+}
+
+// Listen for "R" key to start/stop recording
+document.addEventListener("keydown", e => {
+  if (e.key.toLowerCase() === "r") {
+    if (!recording) startScreenRecording();
+    else stopScreenRecording();
+  }
 });
 </script>
 
