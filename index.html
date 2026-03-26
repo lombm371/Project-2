@@ -57,11 +57,36 @@ body {
   padding: 3px 6px;
   z-index: 2;
 }
+
+#custom-cursor {
+  position: fixed;
+  width: 16px;          /* size of the cursor */
+  height: 16px;
+  pointer-events: none; /* clicks go through it */
+  z-index: 9999;
+  border: 2px solid lime; /* green outline */
+  border-radius: 50%;     /* makes it circular */
+  transform: translate(-50%, -50%); /* center on mouse */
+}
+#record-box {
+  position: fixed;      /* stays in place when scrolling */
+  bottom: 20px;         /* distance from bottom */
+  right: 20px;          /* distance from right */
+  background: rgba(0,0,0,0.7);  /* semi-transparent dark background */
+  color: lime;          /* text color */
+  font-family: 'Courier New', monospace; /* change font here */
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 2px solid lime;
+  border-radius: 6px;
+  z-index: 9999;        /* make sure it’s on top */
+  user-select: none;    /* prevent text selection */
+}
 </style>
 </head>
 
 <body>
-
+<div id="record-box">Press <strong>R</strong> to start recording, <strong>R</strong> to stop</div>
 <div class="grid">
 
   
@@ -289,7 +314,35 @@ function stopScreenRecording() {
     console.log("Screen recording stopped.");
   }
 }
+// Enable audio on hover for all archive videos
+const archiveVideos = document.querySelectorAll('.grid video:not(.liveCam)');
 
+archiveVideos.forEach(video => {
+  // Make sure videos are muted initially
+  video.muted = true;
+
+  // When mouse enters, play video with sound
+  video.addEventListener('mouseenter', () => {
+    video.muted = false;  // unmute
+    video.play();
+  });
+
+  // When mouse leaves, mute again
+  video.addEventListener('mouseleave', () => {
+    video.muted = true;  // mute
+  });
+});
+
+// create the cursor element
+const cursor = document.createElement('div');
+cursor.id = 'custom-cursor';
+document.body.appendChild(cursor);
+
+// move cursor with mouse
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
 // Listen for "R" key to start/stop recording
 document.addEventListener("keydown", e => {
   if (e.key.toLowerCase() === "r") {

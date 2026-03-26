@@ -16,3 +16,9 @@
   border: none;
   object-fit: cover;
 }
+
+body {
+
+  /* Use your target image, scaled down for cursor */
+  cursor: url('images/Untitled-4.png') 16 16, auto;
+}
