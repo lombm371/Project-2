@@ -18,7 +18,27 @@
 }
 
 body {
+  cursor: none; /* hide the default cursor */
+}
 
-  /* Use your target image, scaled down for cursor */
-  cursor: url('images/Untitled-4.png') 16 16, auto;
+/* Create a custom green cursor */
+#custom-cursor {
+  position: fixed;
+  width: 16px;   /* size of the cursor */
+  height: 16px;
+  pointer-events: none; /* let clicks go through */
+  z-index: 9999;
+  border: 2px solid lime; /* green outline */
+  border-radius: 50%;     /* circular target */
+  transform: translate(-50%, -50%);
+}
+
+.cam video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer; /* show pointer over video */
 }
