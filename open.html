@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin: 0;
+  background: black;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  color: lime;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 tiles per row */
+  gap: 8px;
+}
+
+.cam {
+  position: relative;
+  width: 100%;
+  padding-top: 177%; /* 9:16 aspect ratio for videos */
+  background: black;
+  border: 2px solid #111;
+  overflow: hidden;
+  filter: grayscale(100%) contrast(120%);
+}
+
+.cam video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.label {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(0,0,0,0.65);
+  color: lime;
+  font-size: 11px;
+  padding: 3px 6px;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+.time {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.65);
+  color: red;
+  font-size: 11px;
+  padding: 3px 6px;
+  z-index: 2;
+}
+
+#custom-cursor {
+  position: fixed;
+  width: 16px;          /* size of the cursor */
+  height: 16px;
+  pointer-events: none; /* clicks go through it */
+  z-index: 9999;
+  border: 2px solid lime; /* green outline */
+  border-radius: 50%;     /* makes it circular */
+  transform: translate(-50%, -50%); /* center on mouse */
+}
+#record-box {
+  position: fixed;      /* stays in place when scrolling */
+  bottom: 20px;         /* distance from bottom */
+  right: 20px;          /* distance from right */
+  background: rgba(0,0,0,0.7);  /* semi-transparent dark background */
+  color: lime;          /* text color */
+  font-family: 'Courier New', monospace; /* change font here */
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 2px solid lime;
+  border-radius: 6px;
+  z-index: 9999;        /* make sure it’s on top */
+  user-select: none;    /* prevent text selection */
+}
+</style>
+</head>
+
+<body>
+<div id="record-box">Press <strong>R</strong> to start recording, <strong>R</strong> to stop</div>
+<div class="grid">
+
+  
+  <div class="cam">
+  <div class="label">YOU</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 1</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/SnapInsta.to_AQPRmSxLoryphUgrCeTGhMmS4n_0nc2g4vxDdUkpphp4Vh737yQnGMcwdw0KS5rKqfWp-gA76fjTydEfScweuHc5amJ3U3mKEEWmpPc.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+    <div class="label">ecosystem 2</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/11.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+    <div class="label">ecosystem 3</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/3.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+    <div class="label">ecosystem 9</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/7.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+
+  <div class="cam">
+    <div class="label">ecosystem 5</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/5.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+  <div class="label">YOU 3</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 6</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/Create_an_eerie_philosophical__Kling_30__06300.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+  <div class="label">YOU 2</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+  <div class="cam">
+    <div class="label">ecosystem 7</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/Create_a_cinematic_unsettling__Kling_30__84815.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+  <div class="label">YOU 4</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+  <div class="cam">
+    <div class="label">ecosystem 8</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/6.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+  <div class="label">YOU 5</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 10</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/8.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+  <div class="label">YOU 5</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+
+<div class="cam">
+    <div class="label">ecosystem 11</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/9.mp4" type="video/mp4">
+    </video>
+  </div>
+<div class="cam">
+  <div class="label">YOU4</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+  <div class="cam">
+    <div class="label">ecosystem 12</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/10.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/4.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/2.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/13.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="cam">
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/14.mp4" type="video/mp4">
+    </video>
+  </div>
+
+    <div class="cam">
+  <div class="label">YOU 3</div>
+  <div class="time">LIVE</div>
+  <video class="liveCam"></video>
+</div>
+
+<div class="cam">
+    <div class="label">ecosystem 4</div>
+    <div class="time">ARCHIVE</div>
+    <video autoplay muted loop playsinline>
+      <source src="video archive/12.mp4" type="video/mp4">
+    </video>
+  </div>
+  
+
+</div>
+
+<script>
+// --------------------- LIVE CAMERA ---------------------
+navigator.mediaDevices.getUserMedia({ video: true })
+.then(function(stream) {
+  const liveCams = document.querySelectorAll('.liveCam');
+  liveCams.forEach(video => {
+    video.srcObject = stream;
+    video.autoplay = true;
+    video.muted = true;
+    video.playsInline = true;
+  });
+})
+.catch(function(error) {
+  console.log("Camera access denied", error);
+});
+
+// --------------------- SCREEN RECORDING ---------------------
+let mediaRecorder;
+let recordedChunks = [];
+let recording = false;
+
+async function startScreenRecording() {
+  try {
+    const stream = await navigator.mediaDevices.getDisplayMedia({
+      video: { cursor: "always" },
+      audio: false
+    });
+
+    mediaRecorder = new MediaRecorder(stream);
+    mediaRecorder.ondataavailable = e => {
+      if (e.data.size > 0) recordedChunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(recordedChunks, { type: "video/webm" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "screen-record.webm";
+      a.click();
+      recordedChunks = [];
+    };
+
+    mediaRecorder.start();
+    recording = true;
+    console.log("Screen recording started...");
+  } catch (err) {
+    console.error("Error accessing screen:", err);
+  }
+}
+
+function stopScreenRecording() {
+  if (mediaRecorder && recording) {
+    mediaRecorder.stop();
+    recording = false;
+    console.log("Screen recording stopped.");
+  }
+}
+// Enable audio on hover for all archive videos
+const archiveVideos = document.querySelectorAll('.grid video:not(.liveCam)');
+
+archiveVideos.forEach(video => {
+  // Make sure videos are muted initially
+  video.muted = true;
+
+  // When mouse enters, play video with sound
+  video.addEventListener('mouseenter', () => {
+    video.muted = false;  // unmute
+    video.play();
+  });
+
+  // When mouse leaves, mute again
+  video.addEventListener('mouseleave', () => {
+    video.muted = true;  // mute
+  });
+});
+
+// create the cursor element
+const cursor = document.createElement('div');
+cursor.id = 'custom-cursor';
+document.body.appendChild(cursor);
+
+// move cursor with mouse
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+// Listen for "R" key to start/stop recording
+document.addEventListener("keydown", e => {
+  if (e.key.toLowerCase() === "r") {
+    if (!recording) startScreenRecording();
+    else stopScreenRecording();
+  }
+});
+</script>
+
+</body>
+</html>
