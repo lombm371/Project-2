@@ -275,7 +275,7 @@ body {
 </div>
 
 <script>
-// --------------------- LIVE CAMERA ---------------------
+
 navigator.mediaDevices.getUserMedia({ video: true })
 .then(function(stream) {
   const liveCams = document.querySelectorAll('.liveCam');
@@ -336,32 +336,32 @@ function stopScreenRecording() {
 const archiveVideos = document.querySelectorAll('.grid video:not(.liveCam)');
 
 archiveVideos.forEach(video => {
-  // Make sure videos are muted initially
+
   video.muted = true;
 
-  // When mouse enters, play video with sound
+ 
   video.addEventListener('mouseenter', () => {
     video.muted = false;  // unmute
     video.play();
   });
 
-  // When mouse leaves, mute again
+ 
   video.addEventListener('mouseleave', () => {
     video.muted = true;  // mute
   });
 });
 
-// create the cursor element
+
 const cursor = document.createElement('div');
 cursor.id = 'custom-cursor';
 document.body.appendChild(cursor);
 
-// move cursor with mouse
+
 document.addEventListener('mousemove', e => {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
 });
-// Listen for "R" key to start/stop recording
+
 document.addEventListener("keydown", e => {
   if (e.key.toLowerCase() === "r") {
     if (!recording) startScreenRecording();
